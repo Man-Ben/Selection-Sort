@@ -21,7 +21,7 @@ void readVectorIn()
    file.close();
 }
 
-void selectionSortVector()
+void selectionSort()
 {
    for(int i = 0; i < dynamicVector.size() - 1; i++)
    {
@@ -37,7 +37,7 @@ void selectionSortVector()
 
 void printVector()
 {
-   selectionSortVector();
+   selectionSort();
 
    for(int i = 0; i < dynamicVector.size(); i++)
       cout << dynamicVector[i] << ' ';

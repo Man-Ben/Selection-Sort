@@ -2,7 +2,7 @@
 #include <fstream>
 using namespace std;
 
-int vector[100], matrix[25][25] = {0};
+int vector[625], matrix[25][25];
 int vectorLength = 0, matrixLength1 = 0, matrixLength2 = 0;
 
 void readVectorIn()
@@ -39,7 +39,7 @@ void readMatrixIn()
 
 }
 
-void selectionSortVector()
+void selectionSort(int vectorLength)
 {
    for(int i = 0; i < vectorLength - 1; i++)
    {
@@ -53,15 +53,39 @@ void selectionSortVector()
    }
 }
 
-void selectionSortMatrix()
+void convertMatrixToVector()
 {
-   
+   int k = 0;
+   for(int i = 0; i < matrixLength1; i++)
+      for(int j = 0; j < matrixLength2; j++)
+      {
+         vector[k] = matrix[i][j];
+         k++;
+      }  
 }
 
+void convertVectorToMatrix()
+{
+   int k = 0;
+   for(int i = 0; i < matrixLength1; i++)
+      for(int j = 0; j < matrixLength2; j++)
+      {
+         matrix[i][j] = vector[k];
+         k++;
+      }  
+}
+
+void sortMatrix()
+{
+   convertMatrixToVector();
+   selectionSort(matrixLength1 * matrixLength2);
+   convertVectorToMatrix();
+
+}
 
 void printVector()
 {
-   selectionSortVector();
+   selectionSort(vectorLength);
 
    for(int i = 0; i < vectorLength; i++)
       cout << vector[i] << ' ';
@@ -69,7 +93,8 @@ void printVector()
 
 void printMatrix()
 {
-   selectionSortMatrix();
+   sortMatrix();
+
    for(int i = 0; i < matrixLength1; i++)
    {
       for(int j = 0; j < matrixLength2; j++)
