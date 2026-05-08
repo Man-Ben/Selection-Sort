@@ -41,7 +41,7 @@ void readMatrixIn()
 
 }
 
-//Sorba vesszük a vektor elemeit, egyessével összehasonlitjuk az összes többi elemmel és ha az utobbi elem kisebb, megcsréljuk öket egymással.
+//Sorba vesszük a vektor elemeit, keresünk egy minimumot az utánna lévő elemeket közül és ezzel kicseréljük.
 void selectionSort(int vectorLength)
 {
    for(int i = 0; i < vectorLength - 1; i++)
@@ -80,7 +80,7 @@ void convertVectorToMatrix()
       }  
 }
 
-//1 alprogrammal sorba tesszük a mátrix elemeit.
+//összegezzük a sortot.
 void sortMatrix()
 {
    convertMatrixToVector();
