@@ -5,6 +5,7 @@ using namespace std;
 int vector[625], matrix[25][25];
 int vectorLength = 0, matrixLength1 = 0, matrixLength2 = 0;
 
+//Beolvassuk a vektort a .txt file-bol.
 void readVectorIn()
 {
    ifstream file("VectorIn.txt");
@@ -24,6 +25,7 @@ void readVectorIn()
    
 }
 
+//Beolvassuk a mátrixot a .txt file-bol.
 void readMatrixIn()
 {
    ifstream file("MatrixIn.txt");
@@ -39,6 +41,7 @@ void readMatrixIn()
 
 }
 
+//Sorba vesszük a vektor elemeit, egyessével összehasonlitjuk az összes többi elemmel és ha az utobbi elem kisebb, megcsréljuk öket egymással.
 void selectionSort(int vectorLength)
 {
    for(int i = 0; i < vectorLength - 1; i++)
@@ -53,6 +56,7 @@ void selectionSort(int vectorLength)
    }
 }
 
+//A mátrixot (2 dimenziós tömb), vektorrá (1 dimenziós tömb) alakitjuk át.
 void convertMatrixToVector()
 {
    int k = 0;
@@ -64,6 +68,7 @@ void convertMatrixToVector()
       }  
 }
 
+//A selection sort után, ezzel alakitjuk a vektort vissza mátrix formába.
 void convertVectorToMatrix()
 {
    int k = 0;
@@ -75,6 +80,7 @@ void convertVectorToMatrix()
       }  
 }
 
+//1 alprogrammal sorba tesszük a mátrix elemeit.
 void sortMatrix()
 {
    convertMatrixToVector();
@@ -83,6 +89,7 @@ void sortMatrix()
 
 }
 
+//kiirjuk a vektort.
 void printVector()
 {
    selectionSort(vectorLength);
@@ -91,6 +98,7 @@ void printVector()
       cout << vector[i] << ' ';
 }
 
+//kiirjuk a mátrixot.
 void printMatrix()
 {
    sortMatrix();
