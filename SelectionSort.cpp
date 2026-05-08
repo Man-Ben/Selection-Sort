@@ -5,7 +5,7 @@ using namespace std;
 int vector[625], matrix[25][25];
 int vectorLength = 0, matrixLength1 = 0, matrixLength2 = 0;
 
-//Beolvassuk a vektort a .txt file-bol.
+//Beolvassuk a vektort a .txt file-ból.
 void readVectorIn()
 {
    ifstream file("VectorIn.txt");
@@ -25,7 +25,7 @@ void readVectorIn()
    
 }
 
-//Beolvassuk a mátrixot a .txt file-bol.
+//Beolvassuk a mátrixot a .txt file-ból.
 void readMatrixIn()
 {
    ifstream file("MatrixIn.txt");
@@ -41,7 +41,7 @@ void readMatrixIn()
 
 }
 
-//Sorba vesszük a vektor elemeit, keresünk egy minimumot az utánna lévő elemeket közül és ezzel kicseréljük.
+//Sorba vesszük a vektor elemeit, keresünk egy minimumot az utána lévő elemek közül és ezzel kicseréljük.
 void selectionSort(int vectorLength)
 {
    for(int i = 0; i < vectorLength - 1; i++)
